@@ -1,0 +1,4 @@
+baseURL = "https://cifre-se.surge.sh/"
+languageCode = "pt-br"
+title = "Cifre-se"
+theme = "anubis"

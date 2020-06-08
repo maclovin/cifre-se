@@ -1,0 +1,29 @@
+{{ define "main" }}
+    <div class="homepage-content">
+        {{ .Content }}
+    </div>
+    <section class="intro">
+    <p>
+        Seja bem-vindo(a) a cartilha de segurança Cifre-se. Ela foi escrita em conjunto
+        com hackers, adovogados e ativistas especialmente para quem busca o conhecimento 
+        básico necessário para se proteger e proteger seus dados. 
+       
+        Não importa o motivo que te trouxe até aqui, nós acreditamos que <strong>a segurança da informação é um direito de todos(as)</strong> 
+        e estamos aqui pra te ajudar.
+    </p>
+<p>
+        Abaixo você verá o índice da nossa cartilha, que te guiará por
+        todas as técnicas mais utilizadas por pessoas comuns e especialistas de segurança,
+        passo-a-passo, sem complicações nem palavras difíceis.
+</p>
+<p>
+        Por isso é importante que você siga a cartilha desde o inicio caso não possua nenhum conhecimento a respeito.
+    </p>
+</section>
+    {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ range (.Paginate $pages).Pages }}
+        {{ partial "postSummary.html" . }}
+    {{ end }}
+    {{ partial "pagination.html" . }}
+
+{{ end }}
